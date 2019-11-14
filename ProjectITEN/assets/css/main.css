@@ -1,6 +1,6 @@
 @charset "UTF-8";
 @import url(font-awesome.min.css);
-@import url("https://fonts.googleapis.com/css?family=Scope+One|Trocchi");
+@import url("https://fonts.googleapis.com/css?family=Scope+One|Trocchi|Kalam&display=swap");
 
 /*
 	Urban by TEMPLATED
@@ -3915,4 +3915,17 @@
 				padding: 3em 1em 1em 1em;
 			}
 
+		}
+
+		#col3 p, ul {
+			text-align: justify;
+		}
+
+		#col3 h3, #col3 p, #col3 ul {
+			font-family: 'Kalam', cursive;
+			color: #fff;
+
+		}
+		#col3 h3 {
+			border-bottom: 2px solid #fff;
 		}
