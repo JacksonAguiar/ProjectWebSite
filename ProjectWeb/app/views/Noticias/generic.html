@@ -1,29 +1,62 @@
-	
-	
-	#{extends 'main.html' /}
-#{set title:'Home' /}
-	
-	
-	<body class="subpage">
+#{extends 'main.html'/}
+#{set 'moreStyles'}
+<!-- include summernote css/js -->
+ <link href="https://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.12/summernote-lite.css" rel="stylesheet">
+#{/set}
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.12/summernote-lite.js"></script>
 
-		<!-- Header -->
-			<header id="header">
-				<div class="logo"><a href="index.html">Urban <span>by TEMPLATED</span></a></div>
-				<a href="#menu">Menu</a>
-			</header>
-
-		<!-- Nav -->
-			<nav id="menu">
-					<ul class="links">
-					<li><a href="@{Start.index}">Home</a></li>
-					<li><a href="@{Start.generic}">Generic</a></li>
-					<li><a href="@{Start.elements}">Elements</a></li>
-				</ul>
-			</nav>
 
 		<!-- Main -->
 			<div id="main">
-
+			
+				<!-- Formulário -->					
+					<div class="card">
+						<br/>
+						<br/>
+						<br/>
+						<br/>
+						<!-- Formulário de adição de conteúdo visível apenas pelo administrador-->
+						<form id="adc" action="@{Noticias.salvar}" method="post"
+							enctype="multipart/form-data">
+					
+							<input type="hidden" name="not.id" value="${not?.id}">
+							<label class="col-sm-2 col-form-label">Faça o seu texto:</label>
+							<textarea id="summernote" name="not.texto">${not?.texto}</textarea>
+							<script>
+							      $('#summernote').summernote({
+							        placeholder: 'Digite seu texto',
+							        height: 300
+							      });
+					    	</script>
+							<br>
+					
+							<!-- Fim do teste -->
+							<button class="btn btn-outline-sucess btn-sm position-relative"
+								style="left: 80%;">
+								<img alt="" src="/public/images/seta.png" style="width: 35px;">
+							</button>
+							<hr />
+						</form>
+						
+						
+				
+				<!-- Fim do formulário -->
+				
+				<!-- Mostrando as noticias cadastradas -->
+				#{list items:not, as:'not'}
+				${not?.texto.raw()}
+				
+				<a href='@{Noticias.editar(not?.id)}'
+					style="color: white; text-transform: uppercase;"> Editar <img
+					src="../public/images/l.png" style="width: 20px;"></a>
+				|
+				<a href='@{Noticias.deletar(not.id)}'
+					style="color: white; text-transform: uppercase;"> Deletar <img
+					src="../public/images/x.png" style="width: 20px;">
+				</a>
+				<hr />
+				#{/list}
+				
 				<!-- Section -->
 					<section class="wrapper">
 						<div class="inner">
@@ -39,7 +72,7 @@
 								</div>
 								<div class="col col1 first">
 									<div class="image round fit">
-										<a href="generic.html" class="link"><img src="images/pic02.jpg" alt="" /></a>
+										<a href="generic.html" class="link"><img src="/public/images/pic02.jpg" alt="" /></a>
 									</div>
 								</div>
 							</div>
@@ -58,21 +91,21 @@
 							<div class="flex flex-3">
 								<div class="col align-center">
 									<div class="image round fit">
-										<img src="images/pic03.jpg" alt="" />
+										<img src="/public/images/pic03.jpg" alt="" />
 									</div>
 									<p>Sed congue elit malesuada nibh, a varius odio vehicula aliquet. Aliquam consequat, nunc quis sollicitudin aliquet. </p>
 									<a href="#" class="button">Learn More</a>
 								</div>
 								<div class="col align-center">
 									<div class="image round fit">
-										<img src="images/pic05.jpg" alt="" />
+										<img src="/public/images/pic05.jpg" alt="" />
 									</div>
 									<p>Sed congue elit malesuada nibh, a varius odio vehicula aliquet. Aliquam consequat, nunc quis sollicitudin aliquet. </p>
 									<a href="#" class="button">Learn More</a>
 								</div>
 								<div class="col align-center">
 									<div class="image round fit">
-										<img src="images/pic04.jpg" alt="" />
+										<img src="/public/images/pic04.jpg" alt="" />
 									</div>
 									<p>Sed congue elit malesuada nibh, a varius odio vehicula aliquet. Aliquam consequat, nunc quis sollicitudin aliquet. </p>
 									<a href="#" class="button">Learn More</a>
@@ -82,7 +115,7 @@
 					</section>
 
 			</div>
-
+		</div>
 		<!-- Footer -->
 			<footer id="footer">
 				<div class="copyright">
@@ -95,13 +128,3 @@
 					<p>&copy; Untitled. All rights reserved. Design: <a href="https://templated.co">TEMPLATED</a>. Images: <a href="https://unsplash.com">Unsplash</a>.</p>
 				</div>
 			</footer>
-
-		<!-- Scripts -->
-			<script src="assets/js/jquery.min.js"></script>
-			<script src="assets/js/jquery.scrolly.min.js"></script>
-			<script src="assets/js/jquery.scrollex.min.js"></script>
-			<script src="assets/js/skel.min.js"></script>
-			<script src="assets/js/util.js"></script>
-			<script src="assets/js/main.js"></script>
-
-	</body>

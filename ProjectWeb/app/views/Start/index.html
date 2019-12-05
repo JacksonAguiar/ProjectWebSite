@@ -1,119 +1,155 @@
-#{extends 'main.html' /}
-#{set title:'Home' /}
-
-
-		<!-- Header -->
-			<header id="header" class="alt">
-				<div class="logo"><a href="index.html">Urban <span>by TEMPLATED</span></a></div>
-				<a href="#menu">Menu</a>
+#{extends 'main.html'/}
+#{set title: 'Página Inicial'/}
+	
+	<!-- Banner -->
+	<section id="banner">
+		<div class="inner">
+			<header>
+				<h1>IFRN - Incubadora Tecnológica de Energias e Negócios (ITEN)</h1>
+				<p>A ITEN espera fomentar um ambiente empresarial único e colaborativo<br /> onde a diversidade dos alunos do IFRN, e a cultura e o patrimônio da comunidade<br /> local sejam a força motriz para a construção de negócios de sucesso.</p>
 			</header>
+			<a href="#main" class="button big scrolly">Saber mais</a>
+		</div>
+	</section>
 
-		<!-- Nav -->
-			<nav id="menu">
-				<ul class="links">
-					<li><a href="@{Start.index}">Home</a></li>
-					<li><a href="@{Start.generic}">Generic</a></li>
-					<li><a href="@{Start.elements}">Elements</a></li>
-				</ul>
-			</nav>
+	<!-- Main -->
+	<div id="main">
 
-		<!-- Banner -->
-			<section id="banner">
-				<div class="inner">
-					<header>
-						<h1>This is Urban</h1>
-						<p>Aliquam libero augue varius non odio nec faucibus congue<br />felis quisque a diam rutrum tempus massa accumsan faucibus purus.</p>
-					</header>
-					<a href="#main" class="button big scrolly">Learn More</a>
+		<!-- Section -->
+		<section id = "home" class="wrapper style1">
+			<div class="inner">
+				<!-- 2 Columns -->
+				<div class="flex flex-2">
+					<div class="col col1">
+						<div class="image round fit">
+							<a href="generic.html" class="link"><img src="public/images/imageITEN.jpg" alt="" /></a>
+						</div>
+					</div>
+					<div class="col col2">
+						<h3>Conheça a ITEN</h3>
+						<p>A Incubadora Tecnológica de Energia e Negócios (ITEN) surgiu como projeto em 2012 no Campus João Câmara. Trata-se de uma incubadora de empresas que foi criada pelo Instituto Federal de Educação, Ciência e Tecnologia do Rio Grande do Norte (IFRN) através de um Programa de Multincubação Tecnológica (MIT) em parceria com o Serviço Brasileiro de Apoio às Micro e Pequenas Empresas (SEBRAE). Em julho de 2014, a ITEN foi oficializada através da Portaria n. 208/2014 - DG/JC e Regimento Interno.</p>
+						<p>A ITEN lançou seu primeiro edital de incubação em setembro de 2014 e em janeiro de 2015 iniciou suas atividades de hotel de projetos (pré-incubação). As equipes selecionadas recebem assessoria, treinamento e oportunidades de se consolidarem no mercado, por meio, de consultorias específicas  e participações em eventos na sua área de atuação.</p>
+						<!--<a href="#" class="button">Learn More</a>-->
+					</div>
 				</div>
-			</section>
-
-		<!-- Main -->
-			<div id="main">
-
-				<!-- Section -->
-					<section class="wrapper style1">
-						<div class="inner">
-							<!-- 2 Columns -->
-								<div class="flex flex-2">
-									<div class="col col1">
-										<div class="image round fit">
-											<a href="generic.html" class="link"><img src="/public/images/pic01.jpg" alt="" /></a>
-										</div>
-									</div>
-									<div class="col col2">
-										<h3>Maecenas a gravida quam</h3>
-										<p>Etiam posuere hendrerit arcu, ac blandit nulla. Sed congue malesuada nibh, a varius odio vehicula aliquet. Aliquam consequat, nunc quis sollicitudin aliquet, enim magna cursus auctor lacinia nunc ex blandit augue. Ut vitae neque fermentum, luctus elit fermentum, porta augue. Nullam ultricies, turpis at fermentum iaculis, nunc justo dictum dui, non aliquet erat nibh non ex.</p>
-										<p>Sed congue malesuada nibh, a varius odio vehicula aliquet. Aliquam consequat, nunc quis sollicitudin aliquet, enim magna cursus auctor lacinia nunc ex blandit augue. Ut vitae neque fermentum, luctus elit fermentum, porta augue. Nullam ultricies, turpis at fermentum iaculis, nunc justo dictum dui, non aliquet erat nibh non ex. </p>
-										<a href="#" class="button">Learn More</a>
-									</div>
-								</div>
-						</div>
-					</section>
-
-				<!-- Section -->
-					<section class="wrapper style2">
-						<div class="inner">
-							<div class="flex flex-2">
-								<div class="col col2">
-									<h3>Suspendisse quis massa vel justo</h3>
-									<p>Etiam posuere hendrerit arcu, ac blandit nulla. Sed congue malesuada nibh, a varius odio vehicula aliquet. Aliquam consequat, nunc quis sollicitudin aliquet, enim magna cursus auctor lacinia nunc ex blandit augue. Ut vitae neque fermentum, luctus elit fermentum, porta augue. Nullam ultricies, turpis at fermentum iaculis, nunc justo dictum dui, non aliquet erat nibh non ex.</p>
-									<p>Sed congue malesuada nibh, a varius odio vehicula aliquet. Aliquam consequat, nunc quis sollicitudin aliquet, enim magna cursus auctor lacinia nunc ex blandit augue. Ut vitae neque fermentum, luctus elit fermentum, porta augue. Nullam ultricies, turpis at fermentum iaculis, nunc justo dictum dui, non aliquet erat nibh non ex. </p>
-									<a href="#" class="button">Learn More</a>
-								</div>
-								<div class="col col1 first">
-									<div class="image round fit">
-										<a href="generic.html" class="link"><img src="/public/images/pic02.jpg" alt="" /></a>
-									</div>
-								</div>
-							</div>
-						</div>
-					</section>
-
-				<!-- Section -->
-					<section class="wrapper style1">
-						<div class="inner">
-							<header class="align-center">
-								<h2>QUEM SOMOS E O QUE FAZEMOS</h2>
-							</header>
-							<div class="flex flex-3">
-								<div class="col align-center">
-									<div class="image round fit">
-										<h3>INCUBADORA</h3>
-									</div>
-									<p>A Incubadora Tecnológica de Energia e Negócios (ITEN) surgiu como projeto em 2012 no Campus João Câmara. Trata-se de uma incubadora de empresas que foi criada pelo Instituto Federal de Educação, Ciência e Tecnologia do Rio Grande do Norte (IFRN) através de um Programa de Multincubação Tecnológica (MIT) em parceria com o Serviço Brasileiro de Apoio às Micro e Pequenas Empresas (SEBRAE). Em julho de 2014, a ITEN foi oficializada através da Portaria n. 208/2014 - DG/JC e Regimento Interno. </p>
-									<a href="#" class="button">Learn More</a>
-								</div>
-								<div class="col align-center">
-									<div class="image round fit">
-										<img src="/public/images/pic05.jpg" alt="" />
-									</div>
-									<p>Sed congue elit malesuada nibh, a varius odio vehicula aliquet. Aliquam consequat, nunc quis sollicitudin aliquet. </p>
-									<a href="#" class="button">Learn More</a>
-								</div>
-								<div class="col align-center">
-									<div class="image round fit">
-										<img src="/public/images/pic04.jpg" alt="" />
-									</div>
-									<p>Sed congue elit malesuada nibh, a varius odio vehicula aliquet. Aliquam consequat, nunc quis sollicitudin aliquet. </p>
-									<a href="#" class="button">Learn More</a>
-								</div>
-							</div>
-						</div>
-					</section>
-
 			</div>
+		</section>
 
-		<!-- Footer -->
-			<footer id="footer">
-				<div class="copyright">
-					<ul class="icons">
-						<li><a href="#" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
-						<li><a href="#" class="icon fa-facebook"><span class="label">Facebook</span></a></li>
-						<li><a href="#" class="icon fa-instagram"><span class="label">Instagram</span></a></li>
-						<li><a href="#" class="icon fa-snapchat"><span class="label">Snapchat</span></a></li>
-					</ul>
-					<p>&copy; Untitled. All rights reserved. Design: <a href="https://templated.co">TEMPLATED</a>. Images: <a href="https://unsplash.com">Unsplash</a>.</p>
+		<!-- Section -->
+		<section class="wrapper style2">
+			<div class="inner">
+				<div class="flex flex-3">
+					<div class="col col2">
+
+
+						<p><strong>Parceiros</strong><br/>
+							SEBRAE-RN e Escritório de João Câmara;<br/>
+							FUNCERN;<br/>
+							JÚNIOR ACHIEVEMENT.<br/><br/><strong>Público Alvo</strong><br/>
+							Alunos do Campus João Câmara;<br/>
+							Egressos;<br/>
+							Comunidade local.
+							<br/><br/>
+
+							<strong>Equipe</strong><br/>
+							Marcos Vasconcelo - Coordenador;<br/> 
+							Luan Gomes - Estagiário.
+						</p>
+					</div>
+					<div class="col col3">
+
+						<p><strong>Capacidade de Incubação e pré-incubação</strong><br/>
+							1 sala para empresa incubada residente;<br/>
+							Capacidade de atendimento de até 5 empresas incubadas não residentes;<br/>
+							1 sala de co-working para empresas em fase de pré-incubação com capacidade de 4 postos de trabalho.
+						</p><p>
+							<strong>Empresas incubadas e pré-incubadas</strong><br/>
+							ACAPORD, BIOSEG, ENERGILAB, SOLUÇÕES DINÂMICAS EM MANUTENÇÃO 
+							E INFORMÁTICA, ABSJ GAMES, SERVIBIOTEC, MINHA ÁRVORE – UMA 
+							SEMENTE PARA UMA VIDA MELHOR, INFORMAN, YOUNG INVENTORS, PLUSED.
+						</p>
+						<!--		<a href="#" class="button">Saber mais</a>-->
+					</div>
+					<!--		<a href="#" class="button">Saber mais</a>-->
+
+
+					<div class="col col1 first">
+						<div class="image round fit">
+							<a href="generic.html" class="link"><img src="public/images/pic02.jpg" alt="" /></a>
+						</div>
+					</div>
 				</div>
-			</footer>
+			</div>
+		</section>
+		<!--Section -->
+		<section class="wrapper style1">
+			<div class="inner">
+				<header class="align-center">
+					<h2>Objetivos</h2>
+					<p>A ITEN quer apoiar e incentivar o estudante e a comunidade local empreendedora a fim de cultivar empresas de sucesso para o crescimento econômico do município de João Câmara e adjacências.</p>
+				</header>
+				<div class="flex flex-3">
+					<div class="col align-center">
+						<div class="image round fit">
+							<img src="public/images/pic03.jpg" alt="" />
+						</div>
+						<p>Sed congue elit malesuada nibh, a varius odio vehicula aliquet. Aliquam consequat, nunc quis sollicitudin aliquet. </p>
+						<a href="#" class="button">Saber mais</a>
+					</div>
+					<div class="col align-center">
+						<div class="image round fit">
+							<img src="public/images/pic05.jpg" alt="" />
+						</div>
+						<p>Sed congue elit malesuada nibh, a varius odio vehicula aliquet. Aliquam consequat, nunc quis sollicitudin aliquet. </p>
+						<a href="#" class="button">Saber mais</a>
+					</div>
+					<div class="col align-center">
+						<div class="image round fit">
+							<img src="public/images/pic04.jpg" alt="" />
+						</div>
+						<p>Sed congue elit malesuada nibh, a varius odio vehicula aliquet. Aliquam consequat, nunc quis sollicitudin aliquet. </p>
+						<a href="#" class="button">Saber mais</a>
+					</div>
+				</div>
+			</div>
+		</section>
+			
+		<!-- Section -->
+		<section class="wrapper style1"style="background-color: #28a428;"> 
+			<div class="inner" >
+				
+				<div id = "col3" class="flex flex-3" >
+					<div class="col">
+							<h3>Missão</h3>
 
+							<p>A ITEN pretende promover uma cultura de empreendedorismo responsável, sustentado pela inovação, crescimento e estimulo à competitividade empresarial. Para isso, proporcionaremos um ambiente acessível e profissional onde empreendedores irão reunir condições necessárias para a formação e desenvolvimento de seus negócios, gerando assim, cooperação e transmissão de sinergias entre incubadora, campus e comunidade local.</p>
+					</div>
+					<div class="col">
+						<h3>Visão</h3>
+						<p>A ITEN espera fomentar um ambiente empresarial único e colaborativo onde a diversidade dos alunos do IFRN, e a cultura e o patrimônio da comunidade local sejam a força motriz para a construção de negócios de sucesso.</p>
+					</div>
+					<div class="col">
+						<h3>Valores</h3>
+						<ul>
+							<li>Inspirar - A transformação de boas idéias de negócio em projetos exequíveis.</li>
+							<li>Incentivar - A criação de novas empresas qualificadas.</li>
+							<li>Incentivar - A criação de novas empresas qualificadas.</li>
+							<li>Apoiar - A disseminação de boas práticas de gestão, acesso ao capital, promoção e dinamização de redes e parcerias.</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</section>
+
+	</div>
+
+	<!-- Footer -->
+	<footer id="footer">
+		<div class="copyright">
+			<ul class="icons align-center">
+				<li><a target="_blank" href="https://www.facebook.com/incubadorajoaocamara" class="icon fa-facebook"><span class="label">Facebook</span></a></li>
+				<li><a href="#" class="icon fa-instagram"><span class="label">Instagram</span></a></li>
+			</ul>
+			<p>&copy; IFRN campus João Câmara - ITEN. All rights reserved. Design: <a href="https://templated.co">TEMPLATED</a></p>
+		</div>
+	</footer>

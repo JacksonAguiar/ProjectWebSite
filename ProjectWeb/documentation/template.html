@@ -17,11 +17,12 @@
 
                 <h2>Contents</h2>
                 <div id="toc">
-					<ui>
-						#{list sections, as: 'section'}
-							<li><a href="${section.href}">${section.title}</a>
+					<ul>
+						#{list items:sections, as: 'section'}
+							<li><a href="${section.href}">${section.title}</a></li>
 						#{/list}
 					</ul>
+					
 				</div>
             </div>
 

@@ -1,6 +1,6 @@
 @charset "UTF-8";
 @import url(font-awesome.min.css);
-@import url("https://fonts.googleapis.com/css?family=Scope+One|Trocchi");
+@import url("https://fonts.googleapis.com/css?family=Scope+One|Trocchi|Kalam&display=swap");
 
 /*
 	Urban by TEMPLATED
@@ -1962,7 +1962,7 @@
 	input[type="button"],
 	button,
 	.button {
-		background-color: #00ff00;
+		background-color: #28a428 ;
 		color: #fff !important;
 	}
 
@@ -1971,7 +1971,7 @@
 		input[type="button"]:hover,
 		button:hover,
 		.button:hover {
-			background-color: #4aa3df;
+			background-color: #B22222;
 		}
 
 		input[type="submit"]:active,
@@ -1979,7 +1979,7 @@
 		input[type="button"]:active,
 		button:active,
 		.button:active {
-			background-color: #258cd1;
+			background-color: #B22222;
 		}
 
 		input[type="submit"].alt,
@@ -2941,7 +2941,7 @@
 			.wrapper.style1 input[type="button"],
 			.wrapper.style1 button,
 			.wrapper.style1 .button {
-				background-color: #00ff00;
+				background-color: #28a428 ;
 				color: #fff !important;
 			}
 
@@ -2950,7 +2950,7 @@
 				.wrapper.style1 input[type="button"]:hover,
 				.wrapper.style1 button:hover,
 				.wrapper.style1 .button:hover {
-					background-color: #4aa3df;
+					background-color: #B22222;
 				}
 
 				.wrapper.style1 input[type="submit"]:active,
@@ -2958,7 +2958,7 @@
 				.wrapper.style1 input[type="button"]:active,
 				.wrapper.style1 button:active,
 				.wrapper.style1 .button:active {
-					background-color: #258cd1;
+					background-color: #28a428;
 				}
 
 				.wrapper.style1 input[type="submit"].alt,
@@ -3107,7 +3107,7 @@
 			}
 
 		.wrapper.style2 {
-			background-color: #006600;
+			background-color: #28a428 ;
 			color: #aed6f1;
 		}
 
@@ -3153,8 +3153,8 @@
 			.wrapper.style2 input[type="button"],
 			.wrapper.style2 button,
 			.wrapper.style2 .button {
-				background-color: #fff;
-				color: #3498db !important;
+				background-color: #B22222;
+				color:  white !important;
 			}
 
 				.wrapper.style2 input[type="submit"].alt,
@@ -3319,7 +3319,7 @@
 			}
 
 			.wrapper.style2 .image {
-				box-shadow: 0px 0px 0px 7px #3498db, 0px 0px 0px 8px rgba(255, 255, 255, 0.25);
+				box-shadow: 0px 0px 0px 7px #B22222, 0px 0px 0px 8px rgba(255, 255, 255, 0.25);
 			}
 
 		@media screen and (max-width: 1280px) {
@@ -3427,7 +3427,7 @@
 
 			#header > .logo a {
 				font-size: 1.25em;
-				color: #3498db;
+				color: #28a428;
 			}
 
 				#header > .logo a:hover {
@@ -3453,7 +3453,7 @@
 		}
 
 			#header > a:hover {
-				color: #3498db;
+				color: #28a428;
 			}
 
 			#header > a[href="#menu"] {
@@ -3613,7 +3613,7 @@
 					}
 
 					#menu > ul.links > li:hover {
-						color: #3498db;
+						color: #28a428;
 					}
 
 					#menu > ul.links > li:first-child > a:not(.button) {
@@ -3657,7 +3657,7 @@
 			}
 
 			#menu .close:hover {
-				color: #3498db;
+				color: #28a428;
 			}
 
 			@media screen and (max-width: 736px) {
@@ -3705,7 +3705,7 @@
 		-webkit-justify-content: center;
 		-ms-justify-content: center;
 		justify-content: center;
-		background-image: url("../../images/banner.jpg");
+		background-image: url("/public/images/imgifjc.jpg");
 		background-position: center;
 		background-size: cover;
 		background-repeat: no-repeat;
@@ -3915,4 +3915,17 @@
 				padding: 3em 1em 1em 1em;
 			}
 
+		}
+
+		#col3 p, ul {
+			text-align: justify;
+		}
+
+		#col3 h3, #col3 p, #col3 ul {
+			font-family: 'Kalam', cursive;
+			color: #fff;
+
+		}
+		#col3 h3 {
+			border-bottom: 2px solid #fff;
 		}

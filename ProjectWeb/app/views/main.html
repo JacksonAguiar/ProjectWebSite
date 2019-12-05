@@ -4,22 +4,40 @@
     <head>
         <title>#{get 'title' /}</title>
         <meta charset="${_response_encoding}">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" media="screen" href="@{'/public/stylesheets/main.css'}">
         <link rel="stylesheet" media="screen" href="@{'/public/stylesheets/font-awesome.min.css'}">
         #{get 'moreStyles' /}
         <link rel="shortcut icon" type="image/png" href="@{'/public/images/favicon.png'}">
+		<script src="@{'/public/javascripts/jquery.min.js'}"></script>
     </head>
     <body>
-        #{doLayout /}
-        		<!-- Scripts -->
-			<script src="@{'/public/javascripts/jquery.min.js'}"></script>
+	<!-- Header -->
+	<header id="header" class="alt">
+		<div class="logo">
+			<a href="index.html">IFRN<span> - ITEN </span></a>
+		</div>
+		<a href="#menu">Menu</a>
+	</header>
+
+	<!-- Nav -->
+	<nav id="menu">
+		<ul class="links">
+			<li><a href="@{Start.index}">Home</a></li>
+			<li><a href="@{Start.elements}">Elements</a></li>
+			<li><a href="@{Noticias.generic}">Generic</a></li>
+		</ul>
+	</nav>
+
+	#{doLayout /}
+
+	<!-- Scripts -->
 			<script src="@{'/public/javascripts/jquery.scrolly.min.js'}"></script>
 			<script src="@{'/public/javascripts/jquery.scrollex.min.js'}"></script>
 			<script src="@{'/public/javascripts/skel.min.js'}"></script>
 			<script src="@{'/public/javascripts/util.js'}"></script>
 			<script src="@{'/public/javascripts/main.js'}"></script>
         
-        <script src="@{'/public/javascripts/jquery-3.2.1.min.js'}" type="text/javascript" charset="${_response_encoding}"></script>
         #{get 'moreScripts' /}
     </body>
 </html>
