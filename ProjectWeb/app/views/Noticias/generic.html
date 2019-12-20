@@ -1,9 +1,14 @@
 #{extends 'main.html'/}
+#{set title:'Notícias' /}
 #{set 'moreStyles'}
-<!-- include summernote css/js -->
- <link href="https://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.12/summernote-lite.css" rel="stylesheet">
+<!-- include libraries(jQuery, bootstrap) -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.12/summernote-bs4.css" rel="stylesheet">
 #{/set}
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.12/summernote-lite.js"></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.12/summernote-bs4.js"></script>
 
 
 		<!-- Main -->
@@ -15,13 +20,14 @@
 						<br/>
 						<br/>
 						<br/>
+						#{if session.contains("usuario.email")}
 						<!-- Formulário de adição de conteúdo visível apenas pelo administrador-->
 						<form id="adc" action="@{Noticias.salvar}" method="post"
 							enctype="multipart/form-data">
 					
 							<input type="hidden" name="not.id" value="${not?.id}">
 							<label class="col-sm-2 col-form-label">Faça o seu texto:</label>
-							<textarea id="summernote" name="not.texto">${not?.texto}</textarea>
+							<textarea id="summernote" name="not.texto" style="color:black;">${not?.texto}</textarea>
 							<script>
 							      $('#summernote').summernote({
 							        placeholder: 'Digite seu texto',
@@ -37,24 +43,25 @@
 							</button>
 							<hr />
 						</form>
-						
+						#{/if}
 						
 				
 				<!-- Fim do formulário -->
 				
 				<!-- Mostrando as noticias cadastradas -->
 				#{list items:not, as:'not'}
-				${not?.texto.raw()}
-				
-				<a href='@{Noticias.editar(not?.id)}'
-					style="color: white; text-transform: uppercase;"> Editar <img
-					src="../public/images/l.png" style="width: 20px;"></a>
-				|
-				<a href='@{Noticias.deletar(not.id)}'
-					style="color: white; text-transform: uppercase;"> Deletar <img
-					src="../public/images/x.png" style="width: 20px;">
-				</a>
-				<hr />
+					${not?.texto.raw()}
+					#{if session.contains("usuario.email")}
+						<a href='@{Noticias.editar(not.id)}'
+							style="color: white; text-transform: uppercase;"> Editar <img
+							src="../public/images/l.png" style="width: 20px;"></a>
+						|
+						<a href='@{Noticias.deletar(not.id)}'
+							style="color: white; text-transform: uppercase;"> Deletar <img
+							src="../public/images/x.png" style="width: 20px;">
+						</a>
+						<hr />
+					#{/if}
 				#{/list}
 				
 				<!-- Section -->

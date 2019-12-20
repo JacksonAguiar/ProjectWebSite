@@ -18,6 +18,7 @@
 			<a href="index.html">IFRN<span> - ITEN </span></a>
 		</div>
 		<a href="#menu">Menu</a>
+		<a href="@{Logins.form}">Email</a>
 	</header>
 
 	<!-- Nav -->
@@ -26,11 +27,14 @@
 			<li><a href="@{Start.index}">Home</a></li>
 			<li><a href="@{Start.elements}">Elements</a></li>
 			<li><a href="@{Noticias.generic}">Generic</a></li>
+			#{if session.contains("usuario.email")}
+			<li><a href="@{Logins.logout}">Sair</a></li>				
+			#{/if}
 		</ul>
 	</nav>
 
 	#{doLayout /}
-
+	
 	<!-- Scripts -->
 			<script src="@{'/public/javascripts/jquery.scrolly.min.js'}"></script>
 			<script src="@{'/public/javascripts/jquery.scrollex.min.js'}"></script>

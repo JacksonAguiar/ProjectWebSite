@@ -1963,7 +1963,7 @@
 	button,
 	.button {
 		background-color: #28a428 ;
-		color: #fff !important;
+		color: #fff;
 	}
 
 		input[type="submit"]:hover,
@@ -3449,7 +3449,7 @@
 			padding: 0 0.75em;
 			color: inherit;
 			text-decoration: none;
-			color: #FFF;
+			color: #868e96;
 		}
 
 			#header > a:hover {
