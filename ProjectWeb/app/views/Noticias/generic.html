@@ -25,9 +25,9 @@
 						<form id="adc" action="@{Noticias.salvar}" method="post"
 							enctype="multipart/form-data">
 					
-							<input type="hidden" name="not.id" value="${not?.id}">
+							<input type="hidden" name="not.id" value="${noticias?.id}">
 							<label class="col-sm-2 col-form-label">Faça o seu texto:</label>
-							<textarea id="summernote" name="not.texto" style="color:black;">${not?.texto}</textarea>
+							<textarea id="summernote" name="not.texto" style="color:black;">${noticias?.texto}</textarea>
 							<script>
 							      $('#summernote').summernote({
 							        placeholder: 'Digite seu texto',
