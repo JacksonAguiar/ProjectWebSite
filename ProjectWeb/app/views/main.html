@@ -15,11 +15,15 @@
 	<!-- Header -->
 	<header id="header" class="alt">
 		<div class="logo">
-			<a href="index.html">IFRN<span> - ITEN </span></a>
+			<a style="text-decoration:none;" href="@{Start.index}">IFRN<span> - ITEN </span></a>
 		</div>
 		#{if !session.contains("usuario.email")}
-			<a href="@{Logins.form}">Email</a>
+			<a href="@{Logins.form}">Entrar</a>
 		#{/if}
+		#{else}
+		
+		<a href="#">${session['usuario.nome']}</a>
+		#{/else}
 		<a href="#menu">Menu</a>
 	</header>
 
@@ -27,8 +31,7 @@
 	<nav id="menu">
 		<ul class="links">
 			<li><a href="@{Start.index}">Home</a></li>
-			<li><a href="@{Start.elements}">Elements</a></li>
-			<li><a href="@{Noticias.generic}">Generic</a></li>
+			<li><a href="@{Noticias.generic}">Noticias</a></li>
 			#{if session.contains("usuario.email")}
 			<li><a href="@{Logins.logout}">Sair</a></li>				
 			#{/if}

@@ -10,4 +10,8 @@ public class Noticia extends Model{
 	
 	@Column(columnDefinition = "text")
 	public String texto;
+	
+
+	public String titulo;
+	
 }

@@ -1,24 +1,46 @@
-#{extends 'main.html' /} #{set title:'Login' /}
-#{set 'moreStyles'}
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
-#{/set}
-<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
-<br>
-<br>
-<br>
-<br>
-    <form class="form-signin" action="@{Logins.entrar}" method="post">
-	      <h1 class="h3 mb-3 font-weight-normal">Please sign in</h1>
-	      <label for="inputEmail" class="sr-only">Email</label>
-	      <input type="email" id="inputEmail" name = "email" class="form-control" placeholder="Email" required autofocus>
-	      <label for="inputPassword" class="sr-only">Senha</label>
-	      <input type="password" id="inputPassword" name = "senha" class="form-control" placeholder="Senha	" required>
-	      <div class="checkbox mb-3">
-	        <label>
-	          <a href = "@{Logins.esqueciMinhaSenha}"> Esqueceu sua senha?</a>
-	        </label>
-	      </div>
-	      <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
-      </form>
+#{extends 'Loginexclusive.html' /} 
+#{set title:'Login' /}
+
+<form class="form-signin" action="@{Logins.entrar}" method="post">
+	<div class="wrapper fadeInDown">
+		<div id="formContent">
+			<!-- Tabs Titles -->
+
+			<!-- Icon -->
+			<div class="fadeIn first">
+			<a href="@{Start.index}" data-toggle="tooltip" title="Voltar para página principal"><img src="/public/images/logoiten.jpg" id="icon" alt="ITEN logo" />
+			</a>
+				</div>
+
+			<!-- Login Form -->
+			#{if flash.error}
+			<div class="alert alert-danger" role="alert">
+ 			 <a class="alert-link">${flash.error}</a>
+			</div>
+			
+			#{/if}
+			#{elseif flash.success}
+			<div class="alert alert-success" role="alert">
+ 			 <a class="alert-link">${flash.success}</a>
+			</div>
+			
+			#{/elseif}
+
+			<input type="text" id="login" class="fadeIn second" name="email"
+				placeholder="E-mail"> 
+			<input type="password" id="password"
+				class="fadeIn third" name="senha" placeholder="Senha"> 
+			
+			<input
+				type="submit" class="fadeIn fourth" value="Entrar">
+
+
+			<!-- Remind Passowrd -->
+			<div id="formFooter">
+				<a class="underlineHover" href="@{Logins.esqueciMinhaSenha}">Esqueceu
+					sua senha?</a>
+			</div>
+
+		</div>
+	</div>
+</form>

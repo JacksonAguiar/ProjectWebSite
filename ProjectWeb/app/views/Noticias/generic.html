@@ -1,6 +1,9 @@
 #{extends 'main.html'/}
 #{set title:'Notícias' /}
 #{set 'moreStyles'}
+<section id="nobanner"></section>
+
+
 <!-- include libraries(jQuery, bootstrap) -->
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.12/summernote-bs4.css" rel="stylesheet">
@@ -13,17 +16,34 @@
 
 		<!-- Main -->
 			<div id="main">
-			
+		
 				<!-- Formulário -->					
 					<div class="card">
 						<br/>
 						<br/>
+							<h2><i class="fa fa-tags" aria-hidden="true"></i>&nbspNotícias</h2>
 						<br/>
+					#{if flash.success}
+			<div class="alert alert-success" role="alert">
+ 			 <a class="alert-link">${flash.success}</a>
+			</div>
+			
+			#{/if}
+			#{elseif flash.error}
+			<div class="alert alert-success" role="alert">
+ 			 <a class="alert-link">${flash.error}</a>
+			</div>
+			
+			#{/elseif}
 						<br/>
+						
 						#{if session.contains("usuario.email")}
 						<!-- Formulário de adição de conteúdo visível apenas pelo administrador-->
 						<form id="adc" action="@{Noticias.salvar}" method="post"
 							enctype="multipart/form-data">
+					<label class="col-sm-2 col-form-label">Digite um título*:</label>
+					<input type="text" name="not.titulo" maxlength="300" value="${noticias?.titulo}" class="form">
+					
 					
 							<input type="hidden" name="not.id" value="${noticias?.id}">
 							<label class="col-sm-2 col-form-label">Faça o seu texto:</label>
@@ -38,9 +58,9 @@
 					
 							<!-- Fim do teste -->
 							<button class="btn btn-outline-sucess btn-sm position-relative"
-								style="left: 80%;">
-								<img alt="" src="/public/images/seta.png" style="width: 35px;">
-							</button>
+								style="left: 80%;">Adicionar 
+								&nbsp <i class="icon fa-plus"></i>
+								</button>
 							<hr />
 						</form>
 						#{/if}
@@ -49,77 +69,69 @@
 				<!-- Fim do formulário -->
 				
 				<!-- Mostrando as noticias cadastradas -->
+				
+				<section class="wrapper">
+						<div class="inner">
+							<header class="align-center">
+								<h1>Histórico de notícias</h1>
+							</header>
+						</div>
+				
+				
+				
+				<div class="row">
 				#{list items:not, as:'not'}
-					${not?.texto.raw()}
+						
+						
+		
+				 <div class="col-sm-3 text-center">
+				    <div class="card">
+				      <div class="card-body">
+				        <h5 class="card-title">	${not?.titulo.raw()}</h5>
+				        <p class="card-text">	${not?.texto.raw()}</p>
+				        
 					#{if session.contains("usuario.email")}
+								
 						<a href='@{Noticias.editar(not.id)}'
-							style="color: white; text-transform: uppercase;"> Editar <img
-							src="../public/images/l.png" style="width: 20px;"></a>
+						style="height:5%; text-transform: uppercase;" class="btn button"> 
+						Editar &nbsp<i class="fa fa-pencil-square"></i>
+						</a>
 						|
 						<a href='@{Noticias.deletar(not.id)}'
-							style="color: white; text-transform: uppercase;"> Deletar <img
-							src="../public/images/x.png" style="width: 20px;">
+						style="height:5%; text-transform: uppercase;" class="btn button">
+						Deletar &nbsp<i class="icon fa-trash" aria-hidden="true"></i>	
 						</a>
 						<hr />
+						
 					#{/if}
+						</div>
+				    </div>
+				  </div>
+				
+	
+					
 				#{/list}
+				</div>
+				#{else}
+			
+							<header class="align-center">
+								<h2 style="color: gray;">Nenhuma notícia adicionada até o momento...</h2>
+							</header>
+				#{/else}
+				</section>
+				</div>
+				</div>
+				</hr>
 				
 				<!-- Section -->
-					<section class="wrapper">
-						<div class="inner">
-							<header class="align-center">
-								<h1>Generic</h1>
-								<p>Cras sagittis turpis sit amet est tempus, sit amet consectetur purus tincidunt.</p>
-							</header>
-							<div class="flex flex-2">
-								<div class="col col2">
-									<h3>Suspendisse quis massa vel justo</h3>
-									<p>Etiam posuere hendrerit arcu, ac blandit nulla. Sed congue malesuada nibh, a varius odio vehicula aliquet. Aliquam consequat, nunc quis sollicitudin aliquet, enim magna cursus auctor lacinia nunc ex blandit augue. Ut vitae neque fermentum, luctus elit fermentum, porta augue. Nullam ultricies, turpis at fermentum iaculis, nunc justo dictum dui, non aliquet erat nibh non ex.</p>
-									<p>Sed congue malesuada nibh, a varius odio vehicula aliquet. Aliquam consequat, nunc quis sollicitudin aliquet, enim magna cursus auctor lacinia nunc ex blandit augue. Ut vitae neque fermentum, luctus elit fermentum, porta augue. Nullam ultricies, turpis at fermentum iaculis, nunc justo dictum dui, non aliquet erat nibh non ex. Sed sollicitudin bibendum ultricies. Vivamus tristique justo lacinia dui tempus consequat. Integer tristique eu nisi nec fermentum. Ut malesuada quis massa at ultricies. Donec gravida ipsum in augue volutpat laoreet. Ut lobortis turpis sit amet sodales ultrices.</p>
-								</div>
-								<div class="col col1 first">
-									<div class="image round fit">
-										<a href="generic.html" class="link"><img src="/public/images/pic02.jpg" alt="" /></a>
-									</div>
-								</div>
-							</div>
-							<p>Curabitur venenatis lorem ut finibus finibus. Ut quis eleifend libero, nec ultricies metus. Morbi magna risus, congue sit amet pellentesque eget, malesuada ut justo. Sed ac pretium quam. Ut vel ex vitae enim sagittis posuere ac id erat. Vestibulum vel ullamcorper tellus. Donec sapien massa, venenatis ac felis vel, vestibulum sagittis enim. Maecenas ut egestas lorem, nec luctus ligula. Vestibulum neque diam, aliquet non enim a, cursus lacinia metus. Aenean fringilla luctus rhoncus. Integer vulputate massa ac suscipit venenatis. Integer luctus elit non nulla fringilla, ullamcorper maximus sem congue. Integer tristique eu nisi nec fermentum. Ut malesuada quis massa at ultricies.</p>
-							<p>Donec molestie tellus eu tincidunt dignissim. Sed sollicitudin bibendum ultricies. Vivamus tristique justo lacinia dui tempus consequat. Sed hendrerit justo in nisl auctor, id rutrum tortor congue. Vivamus mattis nibh et sem rutrum, vel viverra purus viverra. Donec et justo at orci euismod hendrerit vel vel neque. Donec gravida ipsum in augue volutpat laoreet. Ut lobortis turpis sit amet sodales ultrices.</p>
-						</div>
-					</section>
-
-				<!-- Section -->
-					<section class="wrapper style1">
-						<div class="inner">
-							<header class="align-center">
-								<h2>Aliquam ipsum purus dolor</h2>
-								<p>Cras sagittis turpis sit amet est tempus, sit amet consectetur purus tincidunt.</p>
-							</header>
-							<div class="flex flex-3">
-								<div class="col align-center">
-									<div class="image round fit">
-										<img src="/public/images/pic03.jpg" alt="" />
-									</div>
-									<p>Sed congue elit malesuada nibh, a varius odio vehicula aliquet. Aliquam consequat, nunc quis sollicitudin aliquet. </p>
-									<a href="#" class="button">Learn More</a>
-								</div>
-								<div class="col align-center">
-									<div class="image round fit">
-										<img src="/public/images/pic05.jpg" alt="" />
-									</div>
-									<p>Sed congue elit malesuada nibh, a varius odio vehicula aliquet. Aliquam consequat, nunc quis sollicitudin aliquet. </p>
-									<a href="#" class="button">Learn More</a>
-								</div>
-								<div class="col align-center">
-									<div class="image round fit">
-										<img src="/public/images/pic04.jpg" alt="" />
-									</div>
-									<p>Sed congue elit malesuada nibh, a varius odio vehicula aliquet. Aliquam consequat, nunc quis sollicitudin aliquet. </p>
-									<a href="#" class="button">Learn More</a>
-								</div>
-							</div>
-						</div>
-					</section>
-
-			</div>
+					<footer id="footer">
+		<div class="copyright">
+			<ul class="icons align-center">
+				<li><a style="text-decoration:none;" target="_blank" href="https://www.facebook.com/incubadorajoaocamara" class="icon fa-facebook "><span class="label">Facebook</span></a></li>
+				<li><a style="text-decoration:none;" href="#" class="icon fa-instagram"><span class="label">Instagram</span></a></li>
+			</ul>
+			<p>&copy; IFRN campus JoÃ£o CÃ¢mara - ITEN. All rights reserved. Design: <a href="https://templated.co">TEMPLATED</a></p>
 		</div>
+	</footer>
+
+				

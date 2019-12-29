@@ -1,22 +1,39 @@
-#{extends 'main.html' /} #{set title:'Esqueci Minha Senha' /}
-#{set 'moreStyles'}
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
-#{/set}
-<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
-<br>
-<br>
-<br>
-<br>
-#{if flash.error}
-	<span class = "alert alert-danger">${flash.error}</span>
-#{/if}
-    <form class="form-signin" action="@{Logins.salvarNovaSenha}" method="post">
-    	  <input type="hidden" name = "hash" value = "${hash}">
-	      <label for="inputPassword" class="sr-only">Senha</label>
-	      <input type="password" id="inputPassword" name = "senha" class="form-control" placeholder="Senha" required>
-	      <label for="inputPassword" class="sr-only">Confirmação de Senha</label>
-	      <input type="password" id="inputPassword" name = "confirmaSenha" class="form-control" placeholder="Confirmação de senha" required>
-	      <button class="btn btn-lg btn-primary btn-block" type="submit">Cadastrar nova senha</button>
-      </form>
+#{extends 'Loginexclusive.html' /} #{set title:'Esqueci Minha Senha' /}
+
+<form class="form-signin" action="@{Logins.salvarNovaSenha}"
+	method="post">
+	<div class="wrapper fadeInDown">
+		<div id="formContent">
+			<!-- Tabs Titles -->
+			<input type="hidden" name="hash" value="${hash}">
+			<!-- Icon -->
+			<div class="fadeIn first">
+				<a href="@{Start.index}" data-toggle="tooltip"
+					title="Voltar para p�gina principal"><img
+					src="/public/images/logoiten.jpg" id="icon" alt="ITEN logo" /> </a>
+			</div>
+			<!-- Alerta em caso de erro no formul�rio -->
+
+			#{if flash.error}
+			<div class="alert alert-danger" role="alert">
+				<a class="alert-link">${flash.error}</a>
+			</div>
+
+			#{/if}
+			<!-- Login Form -->
+
+
+			<input type="password" id="login" class="fadeIn second" name="senha"
+				placeholder="Senha"> 
+			<input type="password" id="password"
+				class="fadeIn third" name="confirmaSenha"
+				placeholder="Confimação de Senha"> 
+			
+			<input type="submit"
+				class="fadeIn fourth" value="Cadastrar nova senha">
+
+
+
+		</div>
+	</div>
+</form>

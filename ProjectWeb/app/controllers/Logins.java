@@ -105,10 +105,10 @@ public class Logins extends Controller {
 		Login l = Login.find("hash = ?1", hash).first();
 		if (l != null) {
 			if (senha.equals(confirmaSenha)) {
-				l.senha = senha;
+				l.senha = Crypto.passwordHash(senha);
 				l.hash = null;
 				l.save();
-				flash.success("Nova senha cadastrada com sucesso.");
+				flash.success("Senha alterada com sucesso.");
 				form();
 			} else {
 				flash.error("senhas diferentes");

@@ -22,7 +22,7 @@
 				<div class="flex flex-2">
 					<div class="col col1">
 						<div class="image round fit">
-							<a href="generic.html" class="link"><img src="public/images/imageITEN.jpg" alt="" /></a>
+							<a class="link"><img src="public/images/imageITEN.jpg" alt="" /></a>
 						</div>
 					</div>
 					<div class="col col2">
@@ -75,7 +75,7 @@
 
 					<div class="col col1 first">
 						<div class="image round fit">
-							<a href="generic.html" class="link"><img src="public/images/pic02.jpg" alt="" /></a>
+							<a class="link"><img src="public/images/pic02.jpg" alt="" /></a>
 						</div>
 					</div>
 				</div>
@@ -88,32 +88,34 @@
 					<h2>Objetivos</h2>
 					<p>A ITEN quer apoiar e incentivar o estudante e a comunidade local empreendedora a fim de cultivar empresas de sucesso para o crescimento econômico do município de João Câmara e adjacências.</p>
 				</header>
+				
+				<header class="align-center">
+					<h2>Últimas informações</h2>
+				</header>
 				<div class="flex flex-3">
+				
+				
+				#{list items:not, as:'not'}
+			
 					<div class="col align-center">
 						<div class="image round fit">
 							<img src="public/images/pic03.jpg" alt="" />
 						</div>
-						<p>Sed congue elit malesuada nibh, a varius odio vehicula aliquet. Aliquam consequat, nunc quis sollicitudin aliquet. </p>
-						<a href="#" class="button">Saber mais</a>
+						<h2>${not.titulo}</h2>
+						<a href="@{Start.info(not.id)}" class="button">Saber mais</a>
 					</div>
-					<div class="col align-center">
-						<div class="image round fit">
-							<img src="public/images/pic05.jpg" alt="" />
-						</div>
-						<p>Sed congue elit malesuada nibh, a varius odio vehicula aliquet. Aliquam consequat, nunc quis sollicitudin aliquet. </p>
-						<a href="#" class="button">Saber mais</a>
-					</div>
-					<div class="col align-center">
-						<div class="image round fit">
-							<img src="public/images/pic04.jpg" alt="" />
-						</div>
-						<p>Sed congue elit malesuada nibh, a varius odio vehicula aliquet. Aliquam consequat, nunc quis sollicitudin aliquet. </p>
-						<a href="#" class="button">Saber mais</a>
-					</div>
+					
+				#{/list}
 				</div>
-			</div>
-		</section>
-			
+				#{else}
+				<header class="align-center">
+				
+				<h3 style="color: gray;">Nenhuma notícia disponível...</h3>
+				
+				</header>#{/else}
+				
+				</div>
+				</section>						
 		<!-- Section -->
 		<section class="wrapper style1"style="background-color: #28a428;"> 
 			<div class="inner" >
